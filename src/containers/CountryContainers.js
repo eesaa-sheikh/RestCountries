@@ -72,7 +72,7 @@ return(
         countries ? countries.map(function(country) { 
             return (                
             <>
-            <CountryComponent country={country} moveCountryToVisitedList={moveCountryToVisitedList}/>
+            <Country country={country} movetoVisited={movetoVisited}/>
             </>)})
             : "No countries found"
         }
@@ -80,10 +80,10 @@ return(
 
         <h2>Visited Countries:</h2>
         {
-        visitedCountries ? visitedCountries.map(function(country) { 
+        visitedTheCountries ? visitedTheCountries.map(function(country) { 
             return (                
             <>
-            <CountryComponent country={country} moveCountryToVisitedList={() => {console.log("Already added country!")}} />
+            <Country country={country} visitedCountries={() => {console.log("Already added country!")}} />
             </>)})
             : "No countries found"
         }
@@ -117,61 +117,61 @@ export default CountryContainers;
 
 
 
-import { useState, useEffect } from "react";
-import CountryComponent from "../components/CountryComponent";
+// import { useState, useEffect } from "react";
+// import CountryComponent from "../components/CountryComponent";
 
-const CountryContainer = () => {
+// const CountryContainer = () => {
 
-    const[countries, setCountries] = useState([]);
+//     const[countries, setCountries] = useState([]);
 
-    useEffect(() => {
+//     useEffect(() => {
 
-        fetch("https://restcountries.com/v3.1/all")
-        .then(response => response.json())
-        .then(data => setCountries(data))
+//         fetch("https://restcountries.com/v3.1/all")
+//         .then(response => response.json())
+//         .then(data => setCountries(data))
 
-    }, [])
+//     }, [])
 
-    const [visitedCountries, setVisitedCountries] = useState([]);
+//     const [visitedCountries, setVisitedCountries] = useState([]);
 
-    const moveCountryToVisitedList = (country) => {
-        setVisitedCountries([...visitedCountries, country])
-    }
+//     const moveCountryToVisitedList = (country) => {
+//         setVisitedCountries([...visitedCountries, country])
+//     }
     
 
 
-    // const countryNames = countries.map((country) => country.name.common);
+//     // const countryNames = countries.map((country) => country.name.common);
 
-    // console.log(countryNames);
+//     // console.log(countryNames);
 
-    console.log(visitedCountries)
+//     console.log(visitedCountries)
 
-    return(
+//     return(
 
-        <>
-            {
-            countries ? countries.map(function(country) { 
-                return (                
-                <>
-                <CountryComponent country={country} moveCountryToVisitedList={moveCountryToVisitedList}/>
-                </>)})
-                : "No countries found"
-            }
+//         <>
+//             {
+//             countries ? countries.map(function(country) { 
+//                 return (                
+//                 <>
+//                 <CountryComponent country={country} moveCountryToVisitedList={moveCountryToVisitedList}/>
+//                 </>)})
+//                 : "No countries found"
+//             }
     
 
-            <h2>Visited Countries:</h2>
-            {
-            visitedCountries ? visitedCountries.map(function(country) { 
-                return (                
-                <>
-                <CountryComponent country={country} moveCountryToVisitedList={() => {console.log("Already added country!")}} />
-                </>)})
-                : "No countries found"
-            }
-        </>
+//             <h2>Visited Countries:</h2>
+//             {
+//             visitedCountries ? visitedCountries.map(function(country) { 
+//                 return (                
+//                 <>
+//                 <CountryComponent country={country} moveCountryToVisitedList={() => {console.log("Already added country!")}} />
+//                 </>)})
+//                 : "No countries found"
+//             }
+//         </>
 
 
 
-    )
+//     )
 
-}
+// }
