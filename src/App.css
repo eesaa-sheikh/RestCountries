@@ -3,4 +3,10 @@
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 100px;
   justify-content:space-around;
+  color: aliceblue;
+  background-image:url("https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8d29ybGR8ZW58MHx8MHx8&w=1000&q=80") ;
+}
+
+.allCountry{
+  border-color: aquamarine;
 }
