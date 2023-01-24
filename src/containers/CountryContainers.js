@@ -1,5 +1,7 @@
+import { render } from '@testing-library/react';
 import {useState, useEffect} from 'react';
 import Country from '../components/Country';
+
 
 
 const CountryContainers =() =>{
@@ -10,12 +12,6 @@ const CountryContainers =() =>{
     
 
     //§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
-
-  
-
-
-
-
 
     useEffect(() =>{
 
@@ -32,29 +28,21 @@ const CountryContainers =() =>{
         setVisitedTheCountries([...visitedTheCountries,country])
     }
 
-
-    // const visitingCountry = (Country) => {
-
-    //     setVisitedTheCountries([...visitedTheCountries,Country]);
-    //     let filtered = country.filter((countries) =>country.name)
-
-    //   };
-
 const countryComponents = countries.map((country)=>{
         return <Country country ={country} movetoVisited={movetoVisited}/>
     })
+
     const vistedCountryComp = visitedTheCountries.map((country) =>{
-        
+   
     return(
         <>
-        <Country country={countryComponents} />
-        
-        
-        
+        {console.log("country visited")};
+        <Country country={country} movetoVisited = {movetoVisited}></Country>
         </>
+        
     )
 
-    })
+    })  
 
     return(
        countries.length > 0 ? countryComponents : <p>Loading Country</p>
@@ -63,37 +51,6 @@ const countryComponents = countries.map((country)=>{
 
 
 };
-
-
-// return(
-
-//     <>
-//         {
-//         countries ? countries.map(function(country) { 
-//             return (                
-//             <>
-//             <Country country={country} movetoVisited={movetoVisited}/>
-//             </>)})
-//             : "No countries found"
-//         }
-
-
-//         <h2>Visited Countries:</h2>
-//         {
-//         visitedTheCountries ? visitedTheCountries.map(function(country) { 
-//             return (                
-//             <>
-//             <Country country={country} visitedCountries={() => {console.log("Already added country!")}} />
-//             </>)})
-//             : "No countries found"
-//         }
-//     </>
-
-
-
-// )
-
-// }
 
 
 
