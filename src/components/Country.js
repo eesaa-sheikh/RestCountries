@@ -2,7 +2,7 @@
 const Country =({country}) =>{
 
     return (
-       <img src={country}></img>
+        <p>country</p>
     )
 }
 
