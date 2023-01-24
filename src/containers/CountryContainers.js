@@ -4,23 +4,23 @@ import Country from '../components/Country';
 
 const CountryContainers =() =>{
 
-    const[country,setCountry] = useState(null);
+    const[countries,setCountries] = useState([]);
 
     useEffect(() =>{
 
         fetch("https://restcountries.com/v3.1/all")
         .then(response => response.json())
-        .then(data=> setCountry(data.name))
+        .then(data=> setCountries(data))
 
     }, [ ])
 
+    const countryComponents = countries.map((country)=>{
+        return <Country country ={country}/>
+    })
 
     return(
-        // what this says is that if dog image is not loading, loading dog picture with show
-       country ? <Country country ={country}/> : <p>Loading Country picture</p>
+       countries.length > 0 ? countryComponents : <p>Loading Country</p>
 
     )
-
 };
-
 export default CountryContainers;

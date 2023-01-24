@@ -1,9 +1,11 @@
 
 const Country =({country}) =>{
-
     return (
-        <p>country</p>
+        <div>
+        <h3 key = "uniqueId">{country.name.official}</h3>
+        </div>
     )
+
 }
 
 export default Country;
