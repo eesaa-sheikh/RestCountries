@@ -1,11 +1,19 @@
 
-const Country =({country}) =>{
+const Country =({country, movetoVisited}) =>{
+
+    //§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
+    function handleChange (event){
+        event.preventDefault();
+        movetoVisited(country);
+    }
+    //§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
+
     return (
         <div className="allCountry">
         <h3 key = "uniqueId">{country.name.official},
         {country.flag},
         {country.population}</h3>
-        <button className="visitedCountry">I Visited this Country</button>
+        <input type="checkbox" onChange={handleChange}/>
         </div>
     )
 
