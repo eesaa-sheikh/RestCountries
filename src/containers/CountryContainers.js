@@ -6,7 +6,7 @@ import Country from '../components/Country';
 
 const CountryContainers =() =>{
 
-    const[countries,setCountries] = useState([]);
+    const[countries,setCountries] = useState([ ]);
 
     //§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
     
@@ -22,7 +22,7 @@ const CountryContainers =() =>{
     }, [ ])
 
 
-    const[visitedTheCountries,setVisitedTheCountries] = useState([]);
+    const[visitedTheCountries,setVisitedTheCountries] = useState([ ]);
 
     const movetoVisited = (country) =>{
         setVisitedTheCountries([...visitedTheCountries,country])

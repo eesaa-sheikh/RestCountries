@@ -10,9 +10,10 @@ const Country =({country, movetoVisited}) =>{
 
     return (
         <div className="allCountry">
+        
         <h3 key = "uniqueId">{country.name.official},
         {country.flag},
-        {country.population}</h3>
+        {country.population}, {country.region}</h3>
         <input type="checkbox" onChange={handleChange}/>
         </div>
     )
