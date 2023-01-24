@@ -26,19 +26,19 @@ const CountryContainers =() =>{
     }, [ ])
 
 
-    // const[visitedTheCountries,setVisitedTheCountries] = useState([]);
+    const[visitedTheCountries,setVisitedTheCountries] = useState([]);
 
-    // const movetoVisited = (country) =>{
-    //     setVisitedTheCountries([...visitedTheCountries,country])
-    // }
+    const movetoVisited = (country) =>{
+        setVisitedTheCountries([...visitedTheCountries,country])
+    }
 
 
-    const visitingCountry = (Country) => {
+    // const visitingCountry = (Country) => {
 
-        setVisitedTheCountries([...visitedTheCountries,Country]);
-        let filtered = country.filter((countries) =>country.name)
+    //     setVisitedTheCountries([...visitedTheCountries,Country]);
+    //     let filtered = country.filter((countries) =>country.name)
 
-      };
+    //   };
 
 const countryComponents = countries.map((country)=>{
         return <Country country ={country} movetoVisited={movetoVisited}/>
