@@ -1,8 +1,9 @@
 
 const Country =({country}) =>{
     return (
-        <div>
-        <h3 key = "uniqueId">{country.name.official}</h3>
+        <div className="allCountry">
+        <h3 key = "uniqueId">{country.name.official},{country.flag},{country.population}</h3>
+        <button className="visitedCountry">I Visited this Country</button>
         </div>
     )
 
